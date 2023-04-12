@@ -101,15 +101,6 @@ export default function UserHome({
                     </form>
                   )}
                 </div>
-                {/* <div className="user__editDetails">
-                  <button
-                    className="user__editPrompt"
-                    type="button"
-                    onClick={() => nav("/EditUser")}
-                  >
-                    Edit Your Name?
-                  </button>
-                </div> */}
               </div>
               <div className="user__stories">
                 <h2>Your Stories:</h2>

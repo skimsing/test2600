@@ -13,7 +13,6 @@ import UserHome from "./Pages/UserHome/UserHome";
 import CreateUser from "./Pages/CreateUser/CreateUser";
 import Stories from "./Pages/Stories/Stories";
 import { useState, useEffect } from "react";
-import EditUser from "./Components/Edit/Edit";
 import Dialogue from "./Components/Dialogue/Dialogue";
 
 function App() {
@@ -38,24 +37,6 @@ function App() {
       getUser(jwtToken);
     }
   }, []);
-  // useEffect(()=>{
-  //   const jwtToken = localStorage.getItem("jwt_token");
-  //   // if(user == undefined) setUser(tempDetails)
-  //   const updateUser = async () =>{
-  //     try {
-  //       const res = await axios.get("http://localhost:8080/users", {
-  //         headers: {
-  //           Authorization: `Bearer ${jwtToken}`,
-  //         },
-  //       });
-  //       setUser(res.data)
-  //     } catch (error) {
-  //       setUser(tempDetails)
-  //     }
-  //   }
-  //   updateUser(user)
-  // },[user])
-  //if user already logged in, get info
   const getUser = async (jwtToken) => {
     try {
       const response = await axios.get("http://localhost:8080/users", {
@@ -189,15 +170,6 @@ function App() {
               />
             }
           />
-          {/* <Route
-            path="/EditUser"
-            element={
-              <EditUser
-                // handleEditUser={handleEditUser}
-                setUser={setUser}
-              />
-            }
-          /> */}
         </Routes>
       </BrowserRouter>
       {show && <Dialogue setShow={setShow} message={msg} title={title}/>}
