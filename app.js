@@ -15,13 +15,14 @@ app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'frontend','build', 'index.html'));
 });
 
+console.log(path.join(__dirname, 'frontend','build', 'index.html'))
 const connection = require('./connection.js');
 
-connection.then(()=>{
-    const server = app.listen(process.env.PORT, ()=>{
-    console.log(`Connected and listening on PORT ${PORT}`);
-    });
-});
+// connection.then(()=>{
+//     const server = app.listen(process.env.PORT, ()=>{
+//     console.log(`Connected and listening on PORT ${PORT}`);
+//     });
+// });
 
 const usersRoutes = require('./routes/usersRoute');
 const storiesRoutes = require('./routes/storiesRoute');

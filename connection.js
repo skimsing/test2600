@@ -3,4 +3,4 @@ require('dotenv').config();
 
 let mongoDB = process.env.DB_CONNECTION;
 
-module.exports = mongoose.connect(`${mongoDB}`);
+module.exports = mongoose.connect(mongoDB);
